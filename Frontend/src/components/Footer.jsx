@@ -18,13 +18,13 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-4 mt-4">
             {/* Instagram */}
-            <BsInstagram className="h-6 w-6" />
+            <BsInstagram className="h-6 w-6 hover:text-pink-500 cursor-pointer transition-colors duration-300" />
             {/* Facebook */}
-            <FaSquareFacebook className="h-6.5 w-6" />
+            <FaSquareFacebook className="h-6.5 w-6 hover:text-blue-600 cursor-pointer transition-colors duration-300" />
             {/* TikTok */}
-            <FaTiktok className="h-5 w-5" />
+            <FaTiktok className="h-5 w-5 hover:text-black cursor-pointer transition-colors duration-300" />
             {/* Twitter */}
-            <FaXTwitter className="h-5 w-5" />
+            <FaXTwitter className="h-5 w-5 hover:text-gray-800 cursor-pointer transition-colors duration-300" />
           </div>
         </div>
 
@@ -32,19 +32,19 @@ const Footer = () => {
           <p className="font-playfair text-lg text-gray-800">COMPANY</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm">
             <li>
-              <Link to="#">About</Link>
+              <Link to="/about" className="hover:text-amber-600 transition-colors duration-300">About</Link>
             </li>
             <li>
-              <Link to="#">Careers</Link>
+              <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Careers</Link>
             </li>
             <li>
-              <Link to="#">Press</Link>
+              <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Press</Link>
             </li>
             <li>
-              <Link to="#">Blog</Link>
+              <Link to="/blogs" className="hover:text-amber-600 transition-colors duration-300">Blog</Link>
             </li>
             <li>
-              <Link to="#">Partners</Link>
+              <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Partners</Link>
             </li>
           </ul>
         </div>
@@ -53,19 +53,19 @@ const Footer = () => {
           <p className="text-lg font-playfair text-gray-800">SUPPORT</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm">
             <li>
-              <Link to="#">Help Center</Link>
+              <Link to="/about" className="hover:text-amber-600 transition-colors duration-300">Help Center</Link>
             </li>
             <li>
-              <Link to="#">Safety Information</Link>
+              <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Safety Information</Link>
             </li>
             <li>
-              <Link to="#">Cancellation Options</Link>
+              <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Cancellation Options</Link>
             </li>
             <li>
-              <Link to="#">Contact Us</Link>
+              <Link to="/about" className="hover:text-amber-600 transition-colors duration-300">Contact Us</Link>
             </li>
             <li>
-              <Link to="#">Accessibility</Link>
+              <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Accessibility</Link>
             </li>
           </ul>
         </div>
@@ -78,15 +78,15 @@ const Footer = () => {
           <div className="flex items-center mt-4">
             <input
               type="text"
-              className="bg-white rounded-l border border-gray-300 h-9 px-3 outline-none"
+              className="bg-white rounded-l border border-gray-300 h-9 px-3 outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300 transition-all duration-300"
               placeholder="Your email"
             />
-            <button className="flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r">
+            <button className="flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r hover:bg-amber-600 transition-all duration-300 group">
               {/* Arrow icon */}
               <img
                 src={assets.arrowIcon}
                 alt="Arrow Icon"
-                className="w-3.5 invert "
+                className="w-3.5 invert group-hover:scale-110 transition-transform duration-300"
               />
             </button>
           </div>
@@ -97,13 +97,13 @@ const Footer = () => {
         <p>© {new Date().getFullYear()} YatriGhar. All rights reserved.</p>
         <ul className="flex items-center gap-4">
           <li>
-            <Link to="#">Privacy</Link>
+            <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Privacy</Link>
           </li>
           <li>
-            <Link to="#">Terms</Link>
+            <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Terms</Link>
           </li>
           <li>
-            <Link to="#">Sitemap</Link>
+            <Link to="#" className="hover:text-amber-600 transition-colors duration-300">Sitemap</Link>
           </li>
         </ul>
       </div>
