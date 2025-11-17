@@ -75,14 +75,14 @@ export const cities = [
     "Pokhara",
 ];
 
-// Exclusive Offers Dummy Data
+// Exclusive Offers
 export const exclusiveOffers = [
     { _id: 1, title: "Summer Escape Package", description: "Enjoy a complimentary night and daily breakfast", priceOff: 25, expiryDate: "Aug 31", image: exclusiveOfferCardImg1, tag: "summer-escape" },
     { _id: 2, title: "Romantic Getaway", description: "Special couples package including spa treatment", priceOff: 20, expiryDate: "Sep 20", image: exclusiveOfferCardImg2, tag: "romantic-getaway" },
     { _id: 3, title: "Luxury Retreat", description: "Book 60 days in advance and save on your stay at any of our luxury properties worldwide.", priceOff: 30, expiryDate: "Sep 25", image: exclusiveOfferCardImg3, tag: "luxury-retreat" },
 ]
 
-// Testimonials Dummy Data
+// Testimonials
 export const testimonials = [
     { id: 1, name: "Sujan Magar", address: "Chitwan, Nepal", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", rating: 5, review: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that YatriGhar provides." },
     { id: 2, name: "Aadarsha Tamang", address: "Pokhara, Nepal", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", rating: 4, review: "YatriGhar exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!" },
