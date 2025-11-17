@@ -109,7 +109,7 @@ const AddRooms = () => {
         {Object.keys(images).map((key) => (
           <label htmlFor={`roomImage${key}`} key={key}>
             <img
-              className="w-32 h-32 object-cover cursor-pointer border-2 border-gray-300 rounded-lg hover:border-amber-400 transition-colors"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover cursor-pointer border-2 border-gray-300 rounded-lg hover:border-amber-400 transition-colors"
               src={
                 images[key]
                   ? URL.createObjectURL(images[key])

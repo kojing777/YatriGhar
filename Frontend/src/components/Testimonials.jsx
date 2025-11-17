@@ -43,14 +43,14 @@ const Testimonials = () => {
   return (
     <div ref={sectionRef} className="relative overflow-hidden px-4 sm:px-6 md:px-16 lg:px-24 py-16 md:py-20 bg-white/80 backdrop-blur-sm">
       {/* Decorative elements */}
-      <div className="absolute top-20 left-4 sm:left-10 hidden lg:block animate-float">
+      {/* <div className="absolute top-20 left-4 sm:left-10 hidden lg:block animate-float">
         <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full shadow-lg border border-white/20"></div>
       </div>
       <div className="absolute bottom-20 right-4 sm:right-10 hidden lg:block animate-float-delay">
         <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full shadow-lg border border-white/20">
           <FaRegSmileBeam className="text-amber-400 text-xl" />
         </div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto relative">
         {/* Title Section */}
@@ -58,7 +58,7 @@ const Testimonials = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <Title
-            title="Guest Testimonials"
+            title="What our guests say"
             subTitle="What our guests are saying about their experience"
           />
         </div>
@@ -78,14 +78,19 @@ const Testimonials = () => {
               style={{ transitionDelay: isVisible ? `${400 + index * 150}ms` : '0ms' }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="relative">
-                  <img
-                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-amber-400"
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                  />
-                  <div className="absolute -bottom-1 -right-1 bg-amber-500 rounded-full p-1">
-                    <FaQuoteLeft className="text-white text-xs" />
+                <div className={`relative flex-shrink-0 transition-all duration-700 ease-out ${
+                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                }`}>
+                  <div className="relative">
+                    <span className="profile-ring absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+                    <img
+                      className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full object-cover border-2 border-amber-400 shadow-md"
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                    />
+                    <div className="absolute -bottom-1 -right-1 bg-amber-500 rounded-full p-1">
+                      <FaQuoteLeft className="text-white text-xs" />
+                    </div>
                   </div>
                 </div>
                 <div>
@@ -174,6 +179,25 @@ const Testimonials = () => {
         .delay-300 { animation-delay: 300ms; }
         .delay-400 { animation-delay: 400ms; }
         .delay-500 { animation-delay: 500ms; }
+
+        /* Profile ring and subtle pulse for avatar */
+        .profile-ring {
+          width: calc(100% + 16px);
+          height: calc(100% + 16px);
+          border-radius: 9999px;
+          background: radial-gradient(closest-side, rgba(245,158,11,0.12), transparent);
+          filter: blur(6px);
+          opacity: 0.9;
+          transform: translateZ(0);
+          animation: ringPulse 3s ease-in-out infinite;
+          pointer-events: none;
+        }
+
+        @keyframes ringPulse {
+          0% { transform: scale(0.96); opacity: 0.9; }
+          50% { transform: scale(1.08); opacity: 0.35; }
+          100% { transform: scale(0.96); opacity: 0.9; }
+        }
       `}</style>
     </div>
   );

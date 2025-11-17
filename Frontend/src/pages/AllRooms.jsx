@@ -166,7 +166,7 @@ const AllRooms = () => {
   };
 
   return (
-    <div className={`flex flex-col-reverse lg:flex-row mb-6 items-start justify-between pt-28 px-4 md:px-16 lg:px-24 xl:px-32 gap-8 lg:gap-10 transition-all duration-1000 transform ${
+    <div className={`flex bg-slate-50 flex-col-reverse lg:flex-row mb-24 items-start justify-between pt-28 px-4 md:px-16 lg:px-24 xl:px-32 gap-8 lg:gap-10 transition-all duration-1000 transform ${
       mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
     }`}>
       {/* left content */}

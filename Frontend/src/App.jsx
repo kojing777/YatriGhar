@@ -32,38 +32,8 @@ const App = () => {
   return (
     <div>
       <Toaster
-        position="top-center"
+        position="bottom-right"
         reverseOrder={false}
-        toastOptions={{
-          duration: 4000,
-          style: {
-            background: '#fef3c7',
-            color: '#f59e0b',
-            borderRadius: '8px',
-            fontSize: '18px',
-            fontWeight: '600',
-          },
-          success: {
-            style: {
-              background: '#fef3c7',
-              color: '#f59e0b',
-            },
-            iconTheme: {
-              primary: '#f59e0b',
-              secondary: '#fef3c7',
-            },
-          },
-          error: {
-            style: {
-              background: '#fef2f2',
-              color: '#dc2626',
-            },
-            iconTheme: {
-              primary: '#dc2626',
-              secondary: '#fef2f2',
-            },
-          },
-        }}
       />
       {!isOwnerPath && <Navbar />}
 

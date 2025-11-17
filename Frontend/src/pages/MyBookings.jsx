@@ -80,7 +80,7 @@ const MyBookings = () => {
   };
 
   return (
-    <div className="py-28 md:pb-35 px-4 md:pt-32 lg:px-24 xl:px-32">
+    <div className="py-28 md:pb-35 bg-slate-50 px-4 md:pt-32 lg:px-24 xl:px-32">
       <Title
         title="My Bookings"
         subTitle="Easily manage your bookings.plan your trips seamlessly with us"

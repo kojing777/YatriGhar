@@ -55,7 +55,7 @@ const BlogSection = () => {
     {
       id: 3,
       title: "Cultural Festivals You Can't Miss in 2024",
-      excerpt: "From Rajasthan's vibrant fairs to Kerala's traditional celebrations, immerse yourself in India's rich cultural tapestry.",
+      excerpt: "From Rajasthan's vibrant fairs to Kerala's traditional celebrations, immerse yourself in Nepal's rich cultural tapestry.",
       image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=600&fit=crop&q=80",
       category: "Cultural Insights",
       readTime: "6 min read",
@@ -109,7 +109,7 @@ const BlogSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <Title title="Travel Blog"
-            subTitle="Discover inspiring travel stories, expert guides, and insider tips to make your Indian journey unforgettable." />
+            subTitle="Discover inspiring travel stories, expert guides, and insider tips to make your Nepal's journey unforgettable." />
           </div>
 
           {/* Featured Blog Post */}

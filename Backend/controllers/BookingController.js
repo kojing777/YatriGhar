@@ -232,6 +232,7 @@ export const stripePayment = async (req, res) => {
             return res.status(404).json({ success: false, message: 'Room not found' });
         }
 
+        // totalPrice is stored in Nepali Rupees (NPR / rs)
         const totalPrice = booking.totalPrice;
 
         // Get origin from headers or use environment variable as fallback
@@ -245,6 +246,23 @@ export const stripePayment = async (req, res) => {
 
         const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+        // ---------------------------
+        // Convert NPR (rs) to USD and prepare amount in cents
+        // ---------------------------
+        // 1 USD = 140 rs (given conversion rate)
+        const CONVERSION_RATE = 140; // rs per USD
+
+        // Convert the total price from NPR to USD (floating point)
+        const amountInUsd = Number(totalPrice) / CONVERSION_RATE;
+
+        // Convert USD to cents (Stripe expects an integer amount in the smallest currency unit)
+        // Round to nearest cent to avoid fractional cents
+        const amountInCents = Math.round(amountInUsd * 100);
+
+        // Ensure amount is at least 1 cent to avoid Stripe errors for zero amounts
+        const finalAmount = Math.max(amountInCents, 1);
+
+        // Create the line items for Checkout using the USD amount in cents
         const line_items = [
             {
                 price_data: {
@@ -252,7 +270,7 @@ export const stripePayment = async (req, res) => {
                     product_data: {
                         name: `Booking for ${roomData.name} at ${roomData.hotel.name}`,
                     },
-                    unit_amount: Math.round(totalPrice * 100), // amount in cents, ensure it's an integer
+                    unit_amount: finalAmount, // amount in cents (integer)
                 },
                 quantity: 1,
             },

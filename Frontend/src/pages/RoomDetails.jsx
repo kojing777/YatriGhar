@@ -89,7 +89,7 @@ const RoomDetails = () => {
 
   return (
     room && (
-      <div className="py-12 md:py-20 lg:py-28 px-4 md:px-16 lg:px-24 xl:px-32">
+      <div className="py-12 bg-slate-50 md:py-20 lg:py-28 px-4 md:px-16 lg:px-24 xl:px-32">
         {/* room details */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
           <h1 className="text-3xl md:text-4xl font-playfair">
@@ -258,45 +258,78 @@ const RoomDetails = () => {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col md:flex-row items-start md:items-start gap-8">
-          {/* hotel owner name (left on md+) */}
-          <div className="md:w-1/3 w-full">
-            <div className="flex flex-col items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
-              <div className="flex gap-4 items-center">
-                <img
-                  src={
-                    room.hotel && room.hotel.owner
-                      ? room.hotel.owner.image
-                      : assets.userIcon
-                  }
-                  alt="Host"
-                  className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-lg md:text-xl font-medium">
-                    Hosted by {room.hotel?.name || "Unknown Hotel"}
-                  </p>
-                  <div className="flex items-center mt-1 text-sm text-gray-500">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          {/* Owner card */}
+          <aside className="md:col-span-1 w-full">
+            <div className="bg-gradient-to-br from-white/70 to-amber-50 backdrop-blur-sm p-5 rounded-2xl shadow-lg border border-amber-100 hover:shadow-2xl transition-shadow duration-300">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-white shadow-inner">
+                    <img
+                      src={
+                        room.hotel && room.hotel.owner && room.hotel.owner.image
+                          ? room.hotel.owner.image
+                          : assets.userIcon
+                      }
+                      alt="Host"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="absolute -bottom-2 -right-2 bg-amber-500 text-white rounded-full px-2 py-0.5 text-xs font-semibold">Host</span>
+                </div>
+
+                <div className="min-w-0">
+                  <h3 className="text-lg md:text-xl font-semibold truncate">{room.hotel?.name || "Unknown Hotel"}</h3>
+                  <p className="text-sm text-gray-500 truncate">{room.hotel?.owner?.name || "Hosted by owner"}</p>
+                  <div className="flex items-center gap-2 mt-2 text-sm text-gray-600">
                     <StarRating />
-                    <p className="ml-2">200+ reviews</p>
+                    <span className="text-xs text-gray-500">200+ reviews</span>
                   </div>
                 </div>
               </div>
 
-              <button className="px-6 py-2.5 mt-2 rounded text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 transition-all cursor-pointer w-full">
-                Contact Us
-              </button>
-            </div>
-          </div>
+              <div className="mt-4 grid grid-cols-2 gap-2">
+                <button className="px-3 py-2 rounded-lg bg-amber-500 text-white text-sm hover:scale-105 transform transition">Contact</button>
+                <button className="px-3 py-2 rounded-lg bg-white border border-amber-200 text-amber-600 text-sm">View Profile</button>
+              </div>
 
-          <div className="md:w-2/3 max-w-3xl border-y border-gray-300 py-10 text-gray-700">
-            <p>
+              <div className="mt-4 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <img src={assets.locationIcon} alt="location" className="w-4 h-4" />
+                  <span className="truncate">{room.hotel?.address || "Address not provided"}</span>
+                </div>
+                <div className="mt-2 text-xs text-gray-500">Member since 2023 · Response rate 98%</div>
+              </div>
+            </div>
+          </aside>
+
+          {/* Description / text */}
+          <div className="md:col-span-2 bg-white p-6 md:p-8 rounded-2xl shadow-sm text-gray-700">
+            <p className="leading-relaxed">
               Guests will be accommodated on the ground floor based on
               availability. Enjoy a comfortable two-bedroom apartment that
               captures the true essence of city living. The listed price is for
-              two guests please select the number of guests to view the exact rate
+              two guests — please select the number of guests to view the exact rate
               for larger groups.
             </p>
+
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center text-amber-600 font-semibold">✓</div>
+                <div>
+                  <p className="font-medium">Flexible check-in</p>
+                  <p className="text-xs text-gray-500">Early check-in on request</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center text-amber-600 font-semibold">★</div>
+                <div>
+                  <p className="font-medium">Trusted Host</p>
+                  <p className="text-xs text-gray-500">Verified identity & quick responses</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
