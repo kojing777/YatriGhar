@@ -1,7 +1,6 @@
-# YatriGhar v2.0
+# YatriGhar-Nepal Comfort
 
-YatriGhar is a full-stack hotel booking platform that allows users to search, book, and review hotel rooms, while providing hotel owners with tools to manage their properties and listings. This is version 2.0 of the application, built with modern web technologies for a seamless user experience.
-
+Full-Stack Hotel Booking Platform (MERN + Clerk + Stripe).
 ## Features
 
 ### User Features
