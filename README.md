@@ -1,8 +1,10 @@
 <div align="center">
    
-# <img width="120" height="120" src='https://res.cloudinary.com/dp27ua535/image/upload/v1765794849/yatri_qdi61u.png'> — Nepal Comfort
+ <img width="120" height="120" src='https://res.cloudinary.com/dp27ua535/image/upload/v1765794849/yatri_qdi61u.png'> — Nepal Comfort
 
-# </div> <p align="center"> <img alt="React" src="https://img.shields.io/badge/React-Vite-blue.svg"> <img alt="Node.js" src="https://img.shields.io/badge/Node.js-Express-green.svg"> <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-Database-green.svg"> <img alt="Stripe" src="https://img.shields.io/badge/Stripe-Payments-purple.svg"> <img alt="License" src="https://img.shields.io/badge/License-ISC-yellow.svg"> </p>
+</div>
+
+**<p align="center"> <img alt="React" src="https://img.shields.io/badge/React-Vite-blue.svg"> <img alt="Node.js" src="https://img.shields.io/badge/Node.js-Express-green.svg"> <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-Database-green.svg"> <img alt="Stripe" src="https://img.shields.io/badge/Stripe-Payments-purple.svg"> <img alt="License" src="https://img.shields.io/badge/License-ISC-yellow.svg"> </p>**
 
 #### YatriGhar is a full-stack hotel booking platform designed for seamless accommodation discovery and booking across Nepal. Built with the MERN stack, it supports secure authentication, real-time bookings, online payments, hotel owner dashboards, and a modern, responsive UI.
 
